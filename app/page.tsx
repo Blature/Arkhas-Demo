@@ -18,7 +18,7 @@ export default function Home() {
             Contact us today to schedule your consultation. Remember, our expert advice starts at just $10.
           </p>
           <a
-            href="mailto:info@example.com"
+            href="mailto:info@arkhas.org"
             className="inline-block px-8 py-3 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg"
           >
             Get Started Now

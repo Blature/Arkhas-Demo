@@ -43,7 +43,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, type }) => {
                 <input
                   type="email"
                   className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                  placeholder="john@example.com"
+                  placeholder="info@arkhas.org"
                 />
               </div>
 
