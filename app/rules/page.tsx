@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldAlert, IdCard, CreditCard, Route, ChevronDown } from "lucide-react";
+import { ShieldAlert, UserCheck, CreditCard, Route, ChevronDown } from "lucide-react";
 
 export default function RulesPage() {
   const [openSection, setOpenSection] = useState<string | null>("insurance");
@@ -33,7 +33,7 @@ export default function RulesPage() {
     },
     {
       id: "eligibility",
-      icon: IdCard,
+      icon: UserCheck,
       title: "Eligibility Requirements",
       content: [
         {
