@@ -1,62 +1,94 @@
-import React from "react";
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Car, MapPin, Phone, Mail, Instagram, Twitter, Facebook } from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
-              Arkhas
-            </h3>
-            <p className="text-gray-400">
-              Your trusted partner for comprehensive business solutions. From digital strategy to premium transportation.
+    <footer className="bg-[#000a1a] pt-16 pb-8 border-t border-white/5 mt-20">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand Info */}
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="w-10 h-10 bg-brand-gold rounded-xl flex items-center justify-center">
+                <Car className="text-[#001f3f]" size={24} strokeWidth={2.5} />
+              </div>
+              <span className="text-2xl font-heading font-bold tracking-wider text-white">Arkhas</span>
+            </Link>
+            <p className="text-textMuted leading-relaxed">
+              Drive with Ease, Return with Peace... Because Your Choice is Right! Premium car rentals tailored for your comfort in Muscat.
             </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-200">Services</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">Marketing Strategy</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">Social Media</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">Programming</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">Car Rental</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-200">Company</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-blue-400 transition-colors">Blog</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-200">Connect</h4>
-            <div className="flex space-x-4">
-              <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-blue-600 transition-colors">
-                <Facebook size={20} />
-              </Link>
-              <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-blue-400 transition-colors">
-                <Twitter size={20} />
-              </Link>
-              <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-pink-600 transition-colors">
-                <Instagram size={20} />
-              </Link>
-              <Link href="#" className="bg-gray-800 p-2 rounded-full hover:bg-blue-700 transition-colors">
-                <Linkedin size={20} />
-              </Link>
+            <div className="flex items-center gap-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-surfaceLight flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-surfaceLight flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-surfaceLight flex items-center justify-center text-white hover:bg-brand-gold hover:text-black transition-colors">
+                <Facebook size={18} />
+              </a>
             </div>
           </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-heading font-semibold text-white mb-6">Quick Links</h4>
+            <ul className="space-y-4">
+              {['Home', 'Our Fleet', 'Rules & Policy', 'About Us', 'Contact'].map((link) => (
+                <li key={link}>
+                  <Link 
+                    href={link === 'Home' ? '/' : link === 'Our Fleet' ? '/cars' : link === 'Rules & Policy' ? '/rules' : '#'}
+                    className="text-textMuted hover:text-brand-gold transition-colors inline-block transform hover:translate-x-1"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="text-lg font-heading font-semibold text-white mb-6">Legal</h4>
+            <ul className="space-y-4">
+              {['Terms of Service', 'Privacy Policy', 'Insurance Details', 'FAQ'].map((link) => (
+                <li key={link}>
+                  <Link href="#" className="text-textMuted hover:text-brand-gold transition-colors inline-block transform hover:translate-x-1">
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-heading font-semibold text-white mb-6">Contact Us</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-textMuted">
+                <MapPin className="text-brand-gold shrink-0 mt-1" size={18} />
+                <span>Al Khuwair, Muscat<br />Sultanate of Oman</span>
+              </li>
+              <li className="flex items-center gap-3 text-textMuted">
+                <Phone className="text-brand-gold shrink-0" size={18} />
+                <span>+968 77563086</span>
+              </li>
+              <li className="flex items-center gap-3 text-textMuted">
+                <Mail className="text-brand-gold shrink-0" size={18} />
+                <span>booking@arkhascars.com</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Arkhas Agency. All rights reserved.</p>
+
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-textMuted">
+          <p>© {new Date().getFullYear()} Arkhas. All rights reserved. Made by Arkhas Team.</p>
+          <div className="flex items-center gap-1">
+            <span>Designed for</span>
+            <span className="text-white font-medium">Excellence</span>
+          </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
