@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Home', 'Our Fleet', 'Rules & Policy', 'About Us', 'Contact'].map((link) => (
                 <li key={link}>
-                  <Link 
+                  <Link
                     href={link === 'Home' ? '/' : link === 'Our Fleet' ? '/cars' : link === 'Rules & Policy' ? '/rules' : '#'}
                     className="text-textMuted hover:text-brand-gold transition-colors inline-block transform hover:translate-x-1"
                   >
@@ -75,7 +75,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-textMuted">
                 <Mail className="text-brand-gold shrink-0" size={18} />
-                <span>booking@arkhascars.com</span>
+                <span>booking@arkhas.org</span>
               </li>
             </ul>
           </div>
