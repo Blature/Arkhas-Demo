@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${outfit.variable} flex flex-col min-h-screen bg-background text-textDefault selection:bg-brand-gold selection:text-black`}>
+        <script dangerouslySetInnerHTML={{ __html: `document.addEventListener('contextmenu', event => event.preventDefault());` }} />
         <Navbar />
         <main className="flex-grow pt-20">
           {children}
