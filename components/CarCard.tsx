@@ -36,6 +36,12 @@ export default function CarCard({ car, index }: { car: CarData; index: number })
           </div>
         </div>
 
+        {car.description && (
+          <p className="text-textMuted text-sm mb-4 line-clamp-3">
+            {car.description}
+          </p>
+        )}
+
         <div className="space-y-2 mb-6">
           {car.features.map((feature, i) => (
             <div key={i} className="flex items-center text-sm text-textMuted gap-2">
